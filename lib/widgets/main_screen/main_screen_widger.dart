@@ -52,7 +52,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
         centerTitle: true,
       ),
       body: Center(
-        child: _widgetOptions[_selectedTab],
+        child:_widgetOptions[_selectedTab],
       ),
       bottomNavigationBar: buttonNavigationbar,
     );
