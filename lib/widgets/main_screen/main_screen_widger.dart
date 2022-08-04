@@ -21,12 +21,6 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
     });
   }
 
-  static const List<Widget> _widgetOptions =<Widget>[
-    Text('News'),
-    MoveListWidget(),
-    Text('Serials'),
-  ];
-
   @override
   Widget build(BuildContext context) {
     final buttonNavigationbar = BottomNavigationBar(
@@ -53,8 +47,13 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
         title: Text('TMDB'),
         centerTitle: true,
       ),
-      body: Center(
-        child:_widgetOptions[_selectedTab],
+      body: IndexedStack( // виджеты существуют одновременно
+        index: _selectedTab,
+        children: [
+          Text('News'),
+          MoveListWidget(),
+          Text('Serials'),
+        ],
       ),
       bottomNavigationBar: buttonNavigationbar,
     );
